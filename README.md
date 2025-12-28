@@ -57,4 +57,4 @@ To run this project locally on your machine:
 
 ---
 
-_Developed with perseverance by cankamer_
+_Developed with perseverance by [cankamer](https://github.com/cankamer)_
