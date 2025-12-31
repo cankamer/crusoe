@@ -7,7 +7,7 @@ const ThemedCard = ({ style, children, ...props }) => {
   const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
-    <View style={[styles.card, { backgroundColor: theme.uiBackground }, style]} {...props}>
+    <View style={[styles.card, { backgroundColor: theme.uiBackground, borderColor: theme.border }, style]} {...props}>
       {children}
         <Text style={[styles.title, { color: theme.title }]}>
         Pazartesi
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     padding: 16,
     shadowColor: "#000000ff",
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowOpacity: 0.05,
+    shadowRadius: 1,
     elevation: 2,
   },
   title: {
