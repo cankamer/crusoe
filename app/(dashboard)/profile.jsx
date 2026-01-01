@@ -2,14 +2,28 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {Link} from 'expo-router'
 
-const profile = () => {
+//Themed Components
+import ThemedCard from '../../components/ThemedCard';
+import ThemedView from '../../components/ThemedView';
+import ThemedText from '../../components/ThemedText';
+import Spacer from '../../components/Spacer';
+
+const Profile = () => {
   return (
-    <View>
-      <Text>profile</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedText>
+        This is the Profile Page
+      </ThemedText>
+    </ThemedView>
   )
 }
 
-export default profile
+export default Profile
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    alignItems: 'center',
+    
+  },
+})

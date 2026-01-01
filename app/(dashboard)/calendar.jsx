@@ -11,11 +11,11 @@ import ThemedText from '../../components/ThemedText';
 import Spacer from '../../components/Spacer';
 
 
-const Calender = () => {
+const Calendar = () => {
     const colorScheme = useColorScheme()
     const theme = Colors[colorScheme] ?? Colors.light
   return (
-    <ThemedView>
+    <ThemedView style={styles.container}>
       <ThemedText>
         This is the Calendar Page
       </ThemedText>
@@ -24,6 +24,13 @@ const Calender = () => {
   )
 }
 
-export default Calender
+export default Calendar
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+})
