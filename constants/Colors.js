@@ -14,6 +14,7 @@ export const Colors = {
         box: '#ffffff',
         border: '#d4cafd',
         topBorder: '#ebeaef',
+        placeholderColor: '#aaaaaa',
     },
 
     dark: {
@@ -29,6 +30,7 @@ export const Colors = {
         box: '#272726',
         border: '#222322',
         topBorder: '#404040',
+        placeholderColor: '#9191915d',
     },
     
 }

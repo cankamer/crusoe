@@ -5,7 +5,7 @@ import {Colors} from "../constants/Colors"
 
 const ThemedButton = ({style, ...props}) => {
   return (
-        <Pressable style={({pressed}) => [styles.button, pressed && styles.pressed]}
+        <Pressable style={({pressed}) => [styles.button, pressed && styles.pressed, style]}
           {...props}
         />
   )
@@ -14,11 +14,10 @@ const ThemedButton = ({style, ...props}) => {
 export default ThemedButton
 const styles = StyleSheet.create({
     button: {
-        width: 200,
-        height: 50,
         backgroundColor: Colors.primary,
         borderRadius: 10,
         marginVertical: 10,
+        padding: 1,
     },
         pressed: {
         opacity: 0.7,

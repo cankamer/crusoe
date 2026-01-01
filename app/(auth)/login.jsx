@@ -1,6 +1,7 @@
-import { StyleSheet, Pressable } from 'react-native'
+import { StyleSheet, Pressable, TextInput,TouchableWithoutFeedback, Keyboard } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
+import { useState } from 'react'
 
 //Themed Components
 import ThemedView from '../../components/ThemedView'
@@ -8,17 +9,60 @@ import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
 import Spacer from '../../components/Spacer'
 import ThemedButton from '../../components/ThemedButton'
+import ThemedTextInput from '../../components/ThemedTextInput'
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    console.log("Login submitted:", { email, password });
+  }
+
   return (
-    <ThemedView style={styles.container}>
-      <Spacer />
-      
-      <ThemedText title={true}>
-        Login Screen
+
+    
+
+
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <ThemedView>
+      <ThemedText title={true} 
+      fontSize={52}
+      style={{
+      marginHorizontal: 30,
+      maraginBottom: 20,
+      marginTop: 100,
+      justifyContent: 'flex-start',
+      alignSelf: 'flex-start',
+      fontWeight: '700',
+      textShadowColor: '#ffffff70',
+      textShadowOffset: {width: 1, height: 1},
+      textShadowRadius: 6,
+      }}
+      >
+        Welcome{'\n'}Back!
       </ThemedText>
 
-      <ThemedButton>
+    <ThemedView style={styles.container}>
+
+      <Spacer />
+      
+      <ThemedTextInput style={{width: 300, height: 50}} 
+      placeholder="Email" 
+      keyboardType="email-address"
+      onChangeText={setEmail}
+      value={email}
+      />
+      <ThemedTextInput style={{width: 300, height: 50}} 
+      placeholder="Password" 
+      secureTextEntry={true}
+      onChangeText={setPassword}
+      value={password}
+      />
+      <Spacer />
+
+      <ThemedButton style={{width: 300}} onPress={handleLogin}>
+
         <ThemedText style ={{color: '#f2f2f2', textAlign: 'center', lineHeight: 50}}>
           Login
         </ThemedText>
@@ -33,6 +77,8 @@ const Login = () => {
       </Link>
 
     </ThemedView>
+    </ThemedView>
+    </TouchableWithoutFeedback>
   )
 
 }
