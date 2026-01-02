@@ -2,6 +2,7 @@ import { StyleSheet, Pressable, TextInput,TouchableWithoutFeedback, Keyboard } f
 import React from 'react'
 import { Link } from 'expo-router'
 import { useState } from 'react'
+import { useUser } from '../../hooks/useUser'
 
 //Themed Components
 import ThemedView from '../../components/ThemedView'
@@ -15,8 +16,15 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    console.log("Login submitted:", { email, password });
+  const {user} = useUser();
+
+  const handleLogin = async() => {
+    try{
+        await login(email, password)
+        //console.log("current user:", user);
+      }catch (error){
+        //console.log("Registration error:", error);
+      }
   }
 
   return (
